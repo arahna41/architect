@@ -125,6 +125,7 @@ a {
 	row-gap: 25px;
 }
 
+
 @media screen and (min-width: 400px) {
 	.carousel-cell {
 		height: 250px;
