@@ -14,29 +14,57 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-/* flickity */
-/* sec_1 */
-var elem = document.querySelector('.sec_1-carousel');
-var flkty = new Flickity( elem, {
-  cellAlign: 'left',
-  contain: true,
-  wrapAround: true,
-  freeScroll: true
+/* Initialise Carousel */
+const myCarousel_1 = new Carousel(document.querySelector("#myCarousel_1"), {
+  preload: 2,
+  infinite: false,
+  center: true,
+  fill : true,
 });
 
-var flkty = new Flickity( '.sec_1-carousel', {
+/* Customize Fancybox */
+Fancybox.bind('[data-fancybox="gallery"]', {
+  Thumbs: false,
+  Toolbar: false,
+  
+  closeButton: "top",
 
+  Carousel: {
+    Dots: true,
+    on: {
+      change: (that) => {
+        myCarousel_1.slideTo(myCarousel_1.findPageForSlide(that.page), {
+          friction: 0,
+        });
+      },
+    },
+  },
 });
 
-/* sec_2 */
-var elem = document.querySelector('.sec_2-carousel');
-var flkty = new Flickity( elem, {
-  cellAlign: 'left',
-  contain: true,
-  wrapAround: true,
-  freeScroll: true
+
+/* Initialise Carousel */
+const myCarousel_2 = new Carousel(document.querySelector("#myCarousel_2"), {
+  preload: 2,
+  infinite: false,
+  center: true,
+  fill : true,
 });
 
-var flkty = new Flickity( '.sec_2-carousel', {
+/* Customize Fancybox */
+Fancybox.bind('[data-fancybox="gallery"]', {
+  Thumbs: false,
+  Toolbar: false,
 
+  closeButton: "top",
+
+  Carousel: {
+    Dots: true,
+    on: {
+      change: (that) => {
+        myCarousel_2.slideTo(myCarousel_2.findPageForSlide(that.page), {
+          friction: 0,
+        });
+      },
+    },
+  },
 });
