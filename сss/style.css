@@ -95,10 +95,9 @@ a {
 	width: 100%;
 	text-align: start;
 	padding: 10px 0;
-	
-/active, .accordion:hover {
+}	
+.active, .accordion:hover {
 	color: #afafaf;
-}
 }
 .panel {
 	max-height: 0;
