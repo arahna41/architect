@@ -67,7 +67,7 @@ a {
 }
 .heading {
     width: 100%;
-	margin-bottom: 0.9vw;
+	margin-bottom: 3vw;
 	display: block;
 	text-align: justify;
 	font-size: calc( (100vw - 320px)/(1280 - 320) * (94 - 22) + 22px);
