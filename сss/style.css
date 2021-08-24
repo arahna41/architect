@@ -47,57 +47,51 @@ table {
 }
 
 /* general */
-
+html {
+	font-family: 'Roboto', sans-serif;
+	font-size: calc( (100vw - 320px)/(1900 - 375) * (20 - 16) + 16px);
+	color: #444444;
+	text-transform: uppercase;
+}
 body {
 	padding: 16px;
-	color: #444444;
-	font-family: 'Roboto', sans-serif; /* на html */ 
-	text-transform: uppercase;
-	font-size: calc( (100vw - 320px)/(1900 - 375) * (20 - 16) + 16px);
+	display: flex;
+	flex-direction: column;
+    height: 100vh;
+    box-sizing: border-box;
+    justify-content: space-between;
 }
-
-.detail_page {
-	margin-bottom: 400px;
-}
-a {
-	outline: none;
-    text-decoration: none;
-    cursor: pointer;
-    color: #444444;
+header {
+	padding-bottom: 100px;
 }
 .heading {
-    width: 100%;
-	margin-bottom: 3vw;
-	display: block;
-	text-align: justify;
-	font-size: calc( (100vw - 320px)/(1280 - 320) * (94 - 22) + 22px);
+	margin-bottom: 1vw;
 } 
 .heading img {
 	width: 100%;
 }
-
-.line_1 {
+.line {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	justify-content: space-between;
-	grid-auto-rows: 10vw;  /* поменять на марджин */
 }
 .column_right_1 {
 	justify-self: end;
 }
 
 /* accordion */
-.detail_page {
+.cont_accordion {
+	border-top: solid 1px #444444;
+}
+.cont_accordion:last-child {
 	border-bottom: solid 1px #444444;
 }
 .accordion {
 	background-color: transparent;
 	color: #444444;
-	font-size: calc( (100vw - 320px)/(1280 - 320) * (22 - 16) + 16px);
+	font-size: calc( (100vw - 320px)/(1900 - 375) * (20 - 16) + 16px);
 	text-transform: uppercase;
 	border: 0;
 	outline: 0;
-	border-top: solid 1px #444444;
 	width: 100%;
 	text-align: start;
 	padding: 10px 0;
@@ -111,28 +105,12 @@ a {
 	overflow: hidden;
 	transition: all 1s;
 }
-.active {
-	max-height: 100%;
-}
-
-
-
-
-
-
-.line_2 {
-	display: grid;
-	grid-template-rows: 1fr 1fr 1fr;
-	row-gap: 25px;
-	align-items: end;
-}
 
 /* Carousel and Fancybox */
-
 .carousel {
 	--carousel-button-color: #ececec;
-	--carousel-button-svg-width: 50px;
-	--carousel-button-svg-height: 50px;
+	--carousel-button-svg-width: 30px;
+	--carousel-button-svg-height: 30px;
 	--carousel-button-svg-stroke-width: 1.0;
 }
 .carousel__slide {
@@ -142,83 +120,86 @@ a {
 	padding: 0 1px;
 	margin-bottom: 50px;
 }
+.carousel__slide img {
+	height: 98%;
+	width: auto;
+}
 .carousel__button.is-prev, .carousel__button.is-next {
     top: 43%;
 }
-.carousel__slide img {
-	  height: 98%;
-	  width: auto;
-}
 .carousel .carousel__button.is-prev {
-	left: 0.1rem;
+	left: 0rem;
 }
-  
 .carousel .carousel__button.is-next {
-	right: 0.1rem;
+	right: 0rem;
 }
-  
-.carousel .carousel__button:focus {
-	outline: none;
-	
-}
-  
 .fancybox__container {
-	--fancybox-bg: #fff; /* посмотреть */
-	--fancybox-color: #4B5563;
+	--fancybox-color: #ececec;
   
-	--carousel-button-svg-width: 50px;
-    --carousel-button-svg-height: 50px;
+	--carousel-button-svg-width: 30px;
+    --carousel-button-svg-height: 30px;
   
 	--carousel-button-svg-stroke-width: 1.0;
 	--carousel-button-svg-filter: none;
-}
 
+	--fancybox-opacity: 0.9;
+}
 .fancybox__container .carousel__button.is-prev,
 .fancybox__container .carousel__button.is-next {
     top: 50%;
-}
-  
+} 
 .carousel.has-dots {
 	margin-bottom: 0;
 }
+.carousel__button.is-close {
+	width: 25px;
+}
 
-
-
-
-
-
-
-
-
-
+/* footer */
+footer {
+	display: grid;
+	gap: 16px;
+	align-items: center;
+	padding: 150px 0 5px 0;
+}
+a {
+	outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    color: #444444;
+}
+/* media */
 @media screen and (min-width: 400px) {
 	.carousel__slide {
-		height: 210px;
-	}
-	.carousel {
-		--carousel-button-color: #ececec;
-		--carousel-button-svg-width: 70px;
-		--carousel-button-svg-height: 70px;
-		--carousel-button-svg-stroke-width: 1.0;
+		height: 200px;
 	}
 }
 @media screen and (min-width: 768px) {
+	body {
+		padding: 20px;
+	}
+	.carousel {
+		--carousel-button-svg-width: 70px;
+		--carousel-button-svg-height: 70px;
+	}
 	.carousel__slide {
 		height: 290px;
 		padding: 0 2px;
 	}
-	body {
-		padding: 20px;
+	.carousel__button.is-close {
+		width: 30px;
+	}
+	.fancybox__container {
+		--carousel-button-svg-width: 70px;
+		--carousel-button-svg-height: 70px;
 	}
 }
 @media screen and (min-width: 870px) {
-	.line_2 {
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr;
-		justify-content: space-between;
-	}
 	.carousel__slide {
 		height: 350px;
+	}
+	footer {
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 	.column_middle > h2  {
 		text-align: center;
