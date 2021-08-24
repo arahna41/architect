@@ -57,7 +57,7 @@ body {
 }
 
 .detail_page {
-	margin-bottom: 300px;
+	margin-bottom: 400px;
 }
 a {
 	outline: none;
@@ -80,7 +80,7 @@ a {
 	display: grid;
 	grid-template-columns: 2fr 2fr;
 	justify-content: space-between;
-	grid-auto-rows: 12vw;
+	grid-auto-rows: 10vw;
 }
 .column_right_1 {
 	justify-self: end;
@@ -172,8 +172,6 @@ a {
 .carousel.has-dots {
 	margin-bottom: 0;
 }
-
-
 
 
 
