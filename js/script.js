@@ -1,18 +1,26 @@
 /* accordion */
 var acc = document.getElementsByClassName("accordion");
-var i;
-
+var i;      
 for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
+   acc[i].addEventListener("click", function() {
+  var elems = document.getElementsByClassName("accordion");
+  var setClasses = !this.classList.contains('expanded');
+  for(var it of elems) {
+    console.log(it);
+  it.classList.remove("expanded");
+   it.nextElementSibling.style.maxHeight = null;
+  }       
+  if (setClasses) {
+    this.classList.toggle("expanded");
     var panel = this.nextElementSibling;
-    if (panel.style.maxHeight){
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
+    panel.style.maxHeight = panel.scrollHeight + "px";
+  }       
   });
-}
+
+  }
+
+
+
 
 /* Initialise Carousel */
 const myCarousel_1 = new Carousel(document.querySelector("#myCarousel_1"), {
@@ -42,7 +50,7 @@ Fancybox.bind('[data-fancybox="gallery"]', {
 });
 
 
-/* Initialise Carousel */
+/* Initialise Carouse2 */
 const myCarousel_2 = new Carousel(document.querySelector("#myCarousel_2"), {
   preload: 2,
   infinite: false,

@@ -51,9 +51,9 @@ table {
 body {
 	padding: 16px;
 	color: #444444;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', sans-serif; /* на html */ 
 	text-transform: uppercase;
-	font-size: calc( (100vw - 320px)/(1280 - 320) * (22 - 16) + 16px);
+	font-size: calc( (100vw - 320px)/(1900 - 375) * (20 - 16) + 16px);
 }
 
 .detail_page {
@@ -78,9 +78,9 @@ a {
 
 .line_1 {
 	display: grid;
-	grid-template-columns: 2fr 2fr;
+	grid-template-columns: 1fr 1fr;
 	justify-content: space-between;
-	grid-auto-rows: 10vw;
+	grid-auto-rows: 10vw;  /* поменять на марджин */
 }
 .column_right_1 {
 	justify-self: end;
@@ -104,13 +104,22 @@ a {
 }	
 .active, .accordion:hover {
 	color: #afafaf;
+	cursor: pointer;
 }
 .panel {
 	max-height: 0;
 	overflow: hidden;
 	transition: all 1s;
-	
 }
+.active {
+	max-height: 100%;
+}
+
+
+
+
+
+
 .line_2 {
 	display: grid;
 	grid-template-rows: 1fr 1fr 1fr;
@@ -154,7 +163,7 @@ a {
 }
   
 .fancybox__container {
-	--fancybox-bg: #fff;
+	--fancybox-bg: #fff; /* посмотреть */
 	--fancybox-color: #4B5563;
   
 	--carousel-button-svg-width: 50px;
