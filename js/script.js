@@ -1,42 +1,35 @@
 /* accordion */
 var acc = document.getElementsByClassName("accordion");
-var i;      
+var i;
 for (i = 0; i < acc.length; i++) {
-   acc[i].addEventListener("click", function() {
-  var elems = document.getElementsByClassName("accordion");
-  var setClasses = !this.classList.contains('expanded');
-  for(var it of elems) {
-    console.log(it);
-  it.classList.remove("expanded");
-   it.nextElementSibling.style.maxHeight = null;
-  }       
-  if (setClasses) {
-    this.classList.toggle("expanded");
-    var panel = this.nextElementSibling;
-    panel.style.maxHeight = panel.scrollHeight + "px";
-  }       
+  acc[i].addEventListener("click", function () {
+    var elems = document.getElementsByClassName("accordion");
+    var setClasses = !this.classList.contains("expanded");
+    for (var it of elems) {
+      it.classList.remove("expanded");
+      it.nextElementSibling.style.maxHeight = null;
+    }
+    if (setClasses) {
+      this.classList.toggle("expanded");
+      var panel = this.nextElementSibling;
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
   });
+}
 
-  }
-
-
-
-
-/* Initialise Carousel */
+/* Initialise Carousel_1 */
 const myCarousel_1 = new Carousel(document.querySelector("#myCarousel_1"), {
   preload: 2,
   infinite: false,
   center: true,
-  fill : true,
+  fill: true,
 });
 
 /* Customize Fancybox */
 Fancybox.bind('[data-fancybox="gallery"]', {
   Thumbs: false,
   Toolbar: false,
-  
   closeButton: "top",
-
   Carousel: {
     Dots: true,
     on: {
@@ -49,22 +42,19 @@ Fancybox.bind('[data-fancybox="gallery"]', {
   },
 });
 
-
-/* Initialise Carouse2 */
+/* Initialise Carousel_2 */
 const myCarousel_2 = new Carousel(document.querySelector("#myCarousel_2"), {
   preload: 2,
   infinite: false,
   center: true,
-  fill : true,
+  fill: true,
 });
 
 /* Customize Fancybox */
 Fancybox.bind('[data-fancybox="gallery"]', {
   Thumbs: false,
   Toolbar: false,
-
   closeButton: "top",
-
   Carousel: {
     Dots: true,
     on: {
