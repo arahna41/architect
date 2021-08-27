@@ -59,18 +59,21 @@ body {
   padding: 16px;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   box-sizing: border-box;
   justify-content: space-between;
 }
 .heading {
-  padding-bottom: 16px;
+  padding-bottom: 10px;
   width: 100%;
 }
 .line {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
+}
+.description {
+  font-size: calc((100vw - 320px) / (1900 - 375) * (36 - 14) + 14px);
 }
 main {
   padding: 32px 0;
@@ -111,6 +114,10 @@ main {
   --carousel-button-color: #ececec;
   --carousel-button-svg-width: 30px;
   --carousel-button-svg-height: 30px;
+
+  --carousel-button-width: 24px;
+  --carousel-button-height: 24px;
+
   --carousel-button-svg-stroke-width: 1;
 }
 .carousel__slide {
@@ -126,19 +133,22 @@ main {
 }
 .carousel__button.is-prev,
 .carousel__button.is-next {
-  top: 43%;
+  top: 44%;
 }
 .carousel .carousel__button.is-prev {
-  left: 0rem;
+  left: 0.2rem;
 }
 .carousel .carousel__button.is-next {
-  right: 0rem;
+  right: 0.2rem;
 }
 .fancybox__container {
   --fancybox-color: #ececec;
 
   --carousel-button-svg-width: 30px;
   --carousel-button-svg-height: 30px;
+
+  --carousel-button-width: 24px;
+  --carousel-button-height: 24px;
 
   --carousel-button-svg-stroke-width: 1;
   --carousel-button-svg-filter: none;
@@ -147,22 +157,24 @@ main {
 }
 .fancybox__container .carousel__button.is-prev,
 .fancybox__container .carousel__button.is-next {
-  top: 50%;
+  top: 52%;
 }
 .carousel.has-dots {
   margin-bottom: 0;
 }
 .carousel__button.is-close {
-  width: 25px;
+  width: 24px;
+  height: 24px;
 }
 
 /* footer */
 footer {
   display: grid;
-  gap: 16px;
+  gap: 10px;
   align-items: center;
 }
 a {
+  display: block;
   outline: none;
   text-decoration: none;
   cursor: pointer;
@@ -183,27 +195,38 @@ a:hover {
   body {
     padding: 20px;
   }
-  .heading {
-    padding-bottom: 20px;
-  }
   main {
     padding: 40px 0;
   }
   .carousel {
-    --carousel-button-svg-width: 70px;
-    --carousel-button-svg-height: 70px;
+    --carousel-button-svg-width: 40px;
+    --carousel-button-svg-height: 40px;
+
+    --carousel-button-width: 36px;
+    --carousel-button-height: 36px;
   }
   .carousel__slide {
     height: 290px;
     padding: 0 2px;
     margin-bottom: 20px;
   }
+  .carousel__button.is-prev,
+  .carousel__button.is-next {
+    top: 44%;
+  }
   .carousel__button.is-close {
-    width: 30px;
+    width: 24px;
   }
   .fancybox__container {
-    --carousel-button-svg-width: 70px;
-    --carousel-button-svg-height: 70px;
+    --carousel-button-svg-width: 40px;
+    --carousel-button-svg-height: 40px;
+
+    --carousel-button-width: 36px;
+    --carousel-button-height: 36px;
+  }
+  .fancybox__container .carousel__button.is-prev,
+  .fancybox__container .carousel__button.is-next {
+    top: 51%;
   }
   footer {
     display: grid;
@@ -227,4 +250,3 @@ a:hover {
     height: 620px;
   }
 }
-

@@ -17,6 +17,8 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+acc[0].click();
+
 /* Initialise Carousel_1 */
 const myCarousel_1 = new Carousel(document.querySelector("#myCarousel_1"), {
   preload: 2,
