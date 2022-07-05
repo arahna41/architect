@@ -121,11 +121,14 @@ main {
   --carousel-button-svg-stroke-width: 1;
 }
 .carousel__slide {
-  height: 164px;
+  height: 30vh;
   width: auto;
   max-width: 95%;
   padding: 0 1px;
   margin-bottom: 16px;
+}
+.carousel__slide.has-thumb.has-image {
+  height: auto;
 }
 .carousel__slide img {
   height: 98%;
@@ -186,11 +189,6 @@ a:hover {
 }
 
 /* media */
-@media screen and (min-width: 400px) {
-  .carousel__slide {
-    height: 200px;
-  }
-}
 @media screen and (min-width: 768px) {
   body {
     padding: 20px;
@@ -206,7 +204,7 @@ a:hover {
     --carousel-button-height: 36px;
   }
   .carousel__slide {
-    height: 290px;
+   height: 36vh;
     padding: 0 2px;
     margin-bottom: 20px;
   }
@@ -234,19 +232,9 @@ a:hover {
     justify-content: space-between;
   }
 }
-@media screen and (min-width: 870px) {
-  .carousel__slide {
-    height: 350px;
-  }
-}
 @media screen and (min-width: 1200px) {
   .carousel__slide {
-    height: 550px;
+    height: 40vh;
     padding: 0 3px;
-  }
-}
-@media screen and (min-width: 1400px) {
-  .carousel__slide {
-    height: 620px;
   }
 }
